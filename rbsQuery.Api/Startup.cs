@@ -35,6 +35,8 @@ namespace rbsQuery.Api
             builder.Populate(services);
             builder.RegisterType<TradeDataQuery>().As<ITradeDataQuery>();
             builder.RegisterType<AccountQuery>().As<IAccountQuery>();
+            builder.RegisterType<AccountPropertiesQuery>().As<IAccountPropertiesQuery>();
+            builder.RegisterType<DataStoreContext>().As<IDataStoreContext>();
             this.ApplicationContainer = builder.Build();
             return new AutofacServiceProvider(this.ApplicationContainer);
         }
